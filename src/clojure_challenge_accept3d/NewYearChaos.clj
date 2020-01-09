@@ -45,16 +45,34 @@
 ;3
 ;Too chaotic
 
-(def t 5)
-(def n (range 1 (+ t 1)))
-n
 
 
+
+
+(defn starting-state [q]
+  {:order       (map person q)
+   :steps-taken 0})
 
 
 
 
 (comment
+  (def t 5)
+  (def n (range 1 (+ t 1))) n
+  (def sampleinput [2 1 5 3 4])
+
+  (def samplestate {:order       [{:number      2
+                                   :bribes-used 0}
+                                  {:number      1
+                                   :bribes-used 0}
+                                  {:number      5
+                                   :bribes-used 0}
+                                  {:number      3
+                                   :bribes-used 0}
+                                  {:number      4
+                                   :bribes-used 0}]
+                    :steps-taken 0})
+
   )
 
 
