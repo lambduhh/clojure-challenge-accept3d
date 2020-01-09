@@ -56,19 +56,20 @@
    :steps-taken 0})
 
 
-(defn switch-persons [v p1 p2]
-  "swap two persons in vector v"
-  (assoc v p2 (v p1) p1 (v p2)))
+(defn switch-persons [v i1 i2]
+  "swap two persons where i1 and i2 are indexed positions in vector v"
+  (assoc v i2 (v i1) i1 (v i2)))
 
 
 ;; next step create successors
 
-(defn person-move [state person]
+(defn person-move [state person idx]
   (let [{:keys [number bribes-used]} person
         {:keys [order steps-taken]} state
         ]
     (cond
-      (= 2 bribes-used) nil
+      (= empty? (rest order)) nil
+      (= 2 bribes-used) (person-move (rest order) person)
       (= (first order)) (person-move (rest order) person)
       :else
       (switch-persons order )
