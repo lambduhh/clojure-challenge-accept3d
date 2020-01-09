@@ -55,6 +55,25 @@
   {:order       (mapv person q)
    :steps-taken 0})
 
+;; next step create successors
+
+(defn person-move [idx state person]
+  (let [{:keys [number bribes-used]} person
+        {:keys [order steps-taken]} state
+        ]
+    (if (= 2 bribes-used)
+      nil
+      [(stay-still idx state person)
+       (move-up idx state person)]))
+  )
+
+(defn successors [state]
+  )
+
+
+
+
+
 
 
 
