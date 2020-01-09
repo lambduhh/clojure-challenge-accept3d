@@ -14,7 +14,18 @@
       :else (println i)
       )))
 
+
+(defn fizzbuzz1 [n]
+  (doseq [i (range 1 (inc n))]
+    (case [(zero? (rem i 3)) (zero? (rem i 5))]
+      [false false] (println i)
+      [true false] (println "Fizz")
+      [false true] (println "Buzz")
+      [true true] (println "FizzBuzz"))))
+
 (comment
   (fizzbuzz 15)
+
+  (time (fizzbuzz1 10e5))
   (def i 5)
   )
