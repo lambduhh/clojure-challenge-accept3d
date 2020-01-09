@@ -47,33 +47,40 @@
 
 
 
-(defn person [i]
+(defn init-person [i]
   {:number      i
    :bribes-used 0})
 
-(defn starting-state [q]
-  {:order       (mapv person q)
+(defn create-state [q]
+  {:order       (mapv init-person q)
    :steps-taken 0})
+
+
+(defn switch-persons [v p1 p2]
+  "swap two persons in vector v"
+  (assoc v p2 (v p1) p1 (v p2)))
+
 
 ;; next step create successors
 
-(defn person-move [idx state person]
+(defn person-move [state person]
   (let [{:keys [number bribes-used]} person
         {:keys [order steps-taken]} state
         ]
-    (if (= 2 bribes-used)
-      nil
-      [(stay-still idx state person)
-       (move-up idx state person)]))
+    (cond
+      (= 2 bribes-used) nil
+      (= (first order)) (person-move (rest order) person)
+      :else
+      (switch-persons order )
+
+
+      ))
   )
 
-(defn successors [state]
+(defn successor [state]
+  "a fn that takes in a state and an action and computes the cost of performing that action as well as the successor state,
+  the state the world would be in if the given agent performed that action."
   )
-
-
-
-
-
 
 
 
@@ -82,17 +89,34 @@
   (def n (range 1 (+ t 1))) n
   (def sampleinput [2 1 5 3 4])
 
-  (def samplestate {:order       [{:number      2
+  (def start-state {:order       [{:number      1
                                    :bribes-used 0}
-                                  {:number      1
-                                   :bribes-used 0}
-                                  {:number      5
+                                  {:number      2
                                    :bribes-used 0}
                                   {:number      3
                                    :bribes-used 0}
                                   {:number      4
+                                   :bribes-used 0}
+                                  {:number      5
                                    :bribes-used 0}]
                     :steps-taken 0})
+
+  (def l (get start-state :order))
+  (switch-persons l 0 1)
+
+
+  (def goal-state {:order       [{:number      2
+                                  :bribes-used 1}
+                                 {:number      1
+                                  :bribes-used 0}
+                                 {:number      5
+                                  :bribes-used 2}
+                                 {:number      3
+                                  :bribes-used 0}
+                                 {:number      4
+                                  :bribes-used 0}]
+                   :steps-taken 0})
+
 
   (starting-state sampleinput)
 
