@@ -47,10 +47,12 @@
 
 
 
-
+(defn person [i]
+  {:number      i
+   :bribes-used 0})
 
 (defn starting-state [q]
-  {:order       (map person q)
+  {:order       (mapv person q)
    :steps-taken 0})
 
 
@@ -72,6 +74,8 @@
                                   {:number      4
                                    :bribes-used 0}]
                     :steps-taken 0})
+
+  (starting-state sampleinput)
 
   )
 
