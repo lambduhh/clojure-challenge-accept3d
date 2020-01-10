@@ -14,6 +14,15 @@
 
   (nperms 4 4)
   )
+(defn ncombos [n r]
+  (/ (nperms n r) (factorial r)))
+
+(comment
+  (ncombos 10 4)
+  )
+
+
+
 
 
 
@@ -43,10 +52,20 @@
 (comment
   (similar? "110" "1110")
   (similar? "0110" "110")
-  (similar? "1100" "0110")
+  (similar? "1100" "0110"))
+
+(defn similarities [a b]
+  (if (similar? a b)
+    (nperms (count (set a)) (count (set a)))
+    (nperms (count (set b)) (count (set b)))))
+
+
+(comment
+  (similarities "1234" "2341")
+  (similarities "1100" "1001")
+
+
 
 
   )
-
-
 
