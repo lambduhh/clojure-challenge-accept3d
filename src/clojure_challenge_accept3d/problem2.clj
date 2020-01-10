@@ -1,26 +1,28 @@
 (ns clojure-challenge-accept3d.problem2)
 
-(declare maxDifference)
 
 
-(defn diffnums [n xs]
-  (if (empty? xs) nil
-                  (max (maxDifference (into [n] xs))
-                       (diffnums n (rest xs)))))
+(defn maxdifference [nums]
+  (if (= 1 (count nums))
+    -1
+    (let [[head & tail] nums
+          smallest (apply min tail)]
+      (if (< smallest head)
+        (max (- head smallest)
+             (maxdifference (rest nums)))
+        (maxdifference (rest nums))))))
+
 
 (defn maxDifference [nums]
-  (cond
-    (= 1 (count nums)) -1
-    (= 2 (count nums)) (if (< (first nums) (second nums))
-                         (- (second nums) (first nums)))
-    :else
-    (max (diffnums (first nums) (rest nums))
-         (maxDifference (rest nums)))))
+  (let [nums (reverse nums)]
+    (maxdifference nums)))
 
 
 
 (comment
 
-  (def nums [7 1 2 5])
+  (maxDifference [1 2 3 4 5])
+  (maxDifference [7 5 3 1])
+  (maxDifference [7 1 2 5])
 
   )
