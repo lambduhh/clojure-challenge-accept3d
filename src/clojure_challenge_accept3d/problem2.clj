@@ -24,5 +24,7 @@
   (maxDifference [1 2 3 4 5])
   (maxDifference [7 5 3 1])
   (maxDifference [7 1 2 5])
+  (maxDifference [6 9 9 6 9])
+  ;; this is one of the tests that hackerrank says doesn't work :(
 
   )
