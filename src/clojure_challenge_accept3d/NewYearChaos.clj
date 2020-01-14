@@ -45,6 +45,12 @@
 ;3
 ;Too chaotic
 
+;; actions? - one "person" can move
+
+
+
+
+
 
 
 (defn init-person [i]
@@ -71,12 +77,13 @@
         :when (not (zero? bribes)) ]
     {:order       (switch-positions (:order state) i (dec i))
      :bribes-left (switch-positions (update (:bribes-left state) i dec) i (dec i))
-     :steps-taken (inc (:steps-taken state))})
-  )
+     :steps-taken (inc (:steps-taken state))}))
 
 (comment
   (def state start-state)
+  (successors state)
   (def i 2)
+  (+ 1 2)
 
   (def t 5)
   (def n (range 1 (+ t 1))) n
@@ -93,9 +100,6 @@
   (def goal-state {:order       [2 1 5 3 4]
                    :bribes-left [0 0 0 0 0]
                    :steps-taken 0})
-
-
-
 
   )
 

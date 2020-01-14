@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="44e6589b-7f98-4bee-80cd-1d51277aa5a3" name="Default Changelist" comment="-initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ClojureProjectResolveSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clojure_complete_0_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__nrepl_0_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojure_1_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_specs_alpha_0_2_44.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_spec_alpha_0_2_176.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/clojure_challenge_accept3d/months_string_filter.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nrepl-port" beforeDir="false" afterPath="$PROJECT_DIR$/.nrepl-port" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clojure_challenge_accept3d/NewYearChaos.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clojure_challenge_accept3d/NewYearChaos.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/clojure-challenge-accept3d/clojure-challenge-accept3d/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/clojure-challenge-accept3d/clojure-challenge-accept3d/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/repl-port" beforeDir="false" afterPath="$PROJECT_DIR$/target/repl-port" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1W7xE6K93suegY1yS1WC0DFk58N" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="cursive.last.file.extension./home/lorilynjmiller/IdeaProjects/clojure-challenge-accept3d/src" value="clj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="ReplState" timestamp="1579030375306">{:repl-history {:ide [], :local [{:command &quot;(defn successors [state]\n  \&quot;takes a state and returns a sequence of next possible states\&quot;\n  (for [i (range 1 (count (:bribes-left state)))\n        :let [person (get-in state [:order i])\n              bribes (get-in state [:bribes-left i])]\n        :when (not (zero? bribes)) ]\n    {:order       (switch-positions (:order state) i (dec i))\n     :bribes-left (switch-positions (update (:bribes-left state) i dec) i (dec i))\n     :steps-taken (inc (:steps-taken state))})\n  )&quot;, :offset 472, :ns &quot;clojure-challenge-accept3d.NewYearChaos&quot;} {:command &quot;(def state start-state)&quot;, :offset 23, :ns &quot;clojure-challenge-accept3d.NewYearChaos&quot;} {:command &quot;(successors state)&quot;, :offset 18, :ns &quot;clojure-challenge-accept3d.NewYearChaos&quot;} {:command &quot;(+ 1 2)&quot;, :offset 7, :ns &quot;clojure-challenge-accept3d.NewYearChaos&quot;}], :remote []}}</component>
+  <component name="RunManager">
+    <configuration name="REPL for clojure-challenge-accept3d" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
+      <module name="clojure-challenge-accept3d" />
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false">
+      <setting name="replType" value="NREPL" />
+      <setting name="execution" value="LEININGEN" />
+      <module name="" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="" />
+      <setting name="profiles" value="" />
+      <setting name="aliases" value="" />
+      <setting name="fixLineNumbers" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ClojureREPL" factoryName="Remote" activateToolWindowBeforeRun="false">
+      <setting name="host" value="" />
+      <setting name="port" value="0" />
+      <setting name="replType" value="SOCKET" />
+      <setting name="configType" value="SPECIFY" />
+      <setting name="fixLineNumbers" value="false" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Clojure REPL.REPL for clojure-challenge-accept3d" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="44e6589b-7f98-4bee-80cd-1d51277aa5a3" name="Default Changelist" comment="" />
+      <created>1578514321216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578514321216</updated>
+      <workItem from="1578514333049" duration="42843000" />
+      <workItem from="1578693273389" duration="2419000" />
+      <workItem from="1578765558467" duration="13156000" />
+      <workItem from="1578929795143" duration="20427000" />
+    </task>
+    <task id="LOCAL-00001" summary="-initial commit">
+      <created>1578519166564</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578519166564</updated>
+    </task>
+    <task id="LOCAL-00002" summary="-NewYearChaos instructions">
+      <created>1578522484801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578522484801</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-uniform cost search setup">
+      <created>1578532879837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578532879837</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-UCS">
+      <created>1578533716237</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578533716237</updated>
+    </task>
+    <task id="LOCAL-00005" summary="-uniform cost search">
+      <created>1578536986319</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578536986320</updated>
+    </task>
+    <task id="LOCAL-00006" summary="-UCS">
+      <created>1578596211598</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578596211598</updated>
+    </task>
+    <task id="LOCAL-00007" summary="-UCS">
+      <created>1578597349860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578597349860</updated>
+    </task>
+    <task id="LOCAL-00008" summary="-refactored successor fn">
+      <created>1578610407104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578610407104</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-initial commit and sample fizzbuzz">
+      <created>1578612313528</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1578612313528</updated>
+    </task>
+    <task id="LOCAL-00010" summary="-faster fizzbuzz test">
+      <created>1578613340211</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1578613340211</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-fizzbuzz comments">
+      <created>1578613854882</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1578613854882</updated>
+    </task>
+    <task id="LOCAL-00012" summary="-problem1">
+      <created>1578614292894</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1578614292894</updated>
+    </task>
+    <task id="LOCAL-00013" summary="-problem2">
+      <created>1578614468673</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1578614468673</updated>
+    </task>
+    <task id="LOCAL-00014" summary="-problem2">
+      <created>1578615206314</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1578615206314</updated>
+    </task>
+    <task id="LOCAL-00015" summary="-problem2 problems solved">
+      <created>1578616622778</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1578616622778</updated>
+    </task>
+    <task id="LOCAL-00016" summary="-tested">
+      <created>1578616836348</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1578616836348</updated>
+    </task>
+    <task id="LOCAL-00017" summary="-math for problem 3">
+      <created>1578617661266</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1578617661267</updated>
+    </task>
+    <task id="LOCAL-00018" summary="-tools for problem3">
+      <created>1578618485789</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1578618485789</updated>
+    </task>
+    <task id="LOCAL-00019" summary="-tools for problem3">
+      <created>1578618514443</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1578618514443</updated>
+    </task>
+    <task id="LOCAL-00020" summary="-problem3 problems">
+      <created>1578619160177</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1578619160177</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-problem 3 solution">
+      <created>1578622324655</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1578622324655</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-initial commit" />
+    <MESSAGE value="-NewYearChaos instructions" />
+    <MESSAGE value="-uniform cost search setup" />
+    <MESSAGE value="-uniform cost search" />
+    <MESSAGE value="-UCS" />
+    <MESSAGE value="-refactored successor fn" />
+    <MESSAGE value="-initial commit and sample fizzbuzz" />
+    <MESSAGE value="-faster fizzbuzz test" />
+    <MESSAGE value="-fizzbuzz comments" />
+    <MESSAGE value="-problem1" />
+    <MESSAGE value="-problem2" />
+    <MESSAGE value="-problem2 problems solved" />
+    <MESSAGE value="-tested" />
+    <MESSAGE value="-math for problem 3" />
+    <MESSAGE value="-tools for problem3" />
+    <MESSAGE value="-problem3 problems" />
+    <MESSAGE value="-problem 3 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="-problem 3 solution" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="826" y="24" width="1574" height="1576" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578514715915">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="826" y="24" width="1574" height="1576" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578514715915" />
+    <state x="741" y="365" width="1450" height="606" key="CommitChangelistDialog2" timestamp="1578622324309">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="741" y="365" width="1450" height="606" key="CommitChangelistDialog2/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578622324309" />
+    <state x="1544" y="642" width="742" height="846" key="FileChooserDialogImpl" timestamp="1578518818309">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="1544" y="642" width="742" height="846" key="FileChooserDialogImpl/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578518818309" />
+    <state x="1597" y="911" width="636" height="432" key="Github.ShareDialog" timestamp="1578519560092">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="1597" y="911" width="636" height="432" key="Github.ShareDialog/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578519560092" />
+    <state x="654" y="345" width="1716" height="1225" key="SettingsEditor" timestamp="1578765320385">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="654" y="345" width="1716" height="1225" key="SettingsEditor/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578765320385" />
+    <state x="990" y="629" width="1380" height="812" key="Vcs.Push.Dialog.v2" timestamp="1578597393955">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="990" y="629" width="1380" height="812" key="Vcs.Push.Dialog.v2/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578597393955" />
+    <state x="1277" y="792" width="1104" height="516" key="com.intellij.ide.util.TipDialog" timestamp="1578929809905">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="1277" y="792" width="1104" height="516" key="com.intellij.ide.util.TipDialog/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578929809905" />
+    <state x="1548" y="944" width="734" height="242" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578934548349">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="1548" y="944" width="734" height="242" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1578934548349" />
+    <state x="611" y="372" key="run.anything.popup" timestamp="1579017894411">
+      <screen x="0" y="0" width="2400" height="1600" />
+    </state>
+    <state x="611" y="372" key="run.anything.popup/0.0.2400.1600/0.0.3840.2160@0.0.3840.2160" timestamp="1579017894411" />
+  </component>
+</project>
