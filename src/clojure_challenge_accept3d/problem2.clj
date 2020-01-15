@@ -22,22 +22,60 @@
 ;1 <= n <= 2*10^5
 ;-10^6 <= arr[i] <= 10^6 where [0, n-1]
 
+;refactor using proper workflow and sequential programming
+(defn groups [nums]
+  {:head (first nums)
+   :tail (rest nums)})
 
-(defn maxdifference [nums]
-  (if (= 1 (count nums))
-    -1
-    (let [[head & tail] nums
-          smallest (apply min tail)]
-      (if (< smallest head)
-        (max (- head smallest)
-             (maxdifference (rest nums)))
-        (maxdifference (rest nums))))))
+(defn pairs [group]
+  (let [{:keys [head tail]} group]
+    (for [i tail]
+      [head i])))
 
+(defn nums->numgroups [nums]
+  (if (empty? nums)
+    nil
+    (apply vector nums (nums->numgroups (rest nums)))))
+
+
+(comment
+  (def group [4 6 2 1])
+  ;=> {:head 4, :tail [6 2 1]}
+  (pairs {:head 4, :tail [6 2 1]})
+  ;=> [[4,6] [4 2] [4 1]]
+  (nums->numgroups [4 6 2 1])
+  ;=> [[4 6 2 1] [6 2 1] [ 2 1] [1] nil]
+  )
+
+(defn findmaxdiff [v]
+  (- (first v) (second v))
+  ;ret vec
+  )
 
 (defn maxDifference [nums]
-  (let [nums (reverse nums)]
-    (maxdifference nums)))
+  (let [nums (reverse nums)
+        res
+        (->> (nums->numgroups nums)
+             (map groups)
+             (map pairs)
+             (apply concat)
+             (map findmaxdiff)
+             (apply max))]
+    (if (< res 1)
+      -1
+      res)))
 
+(comment
+  (def nums [1 2 6 4])
+  (maxDifference [])
+  (def nums2 [{:head 1, :tail [2 6 4]}
+              {:head 2, :tail [6 4]}
+              {:head 6, :tail [4]}
+              {:head 4, :tail ()}])
+  (def nums3 [[1 2] [1 6] [1 4] [2 6] [2 4] [6 4]])
+  (findmaxdiff [1 2])
+  ;=> 1
+  )
 
 
 (comment
