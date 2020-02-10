@@ -1,0 +1,15 @@
+(ns clojure-challeng-accept3d.reverse-string)
+
+
+(defn reverse-string [txt]
+  (->> (vec txt)
+       (into ())
+       (apply str)))
+
+
+
+(comment
+  (reverse-string "string")
+  ;; "gnirts"
+
+  )

@@ -1,0 +1,30 @@
+(ns clojure-challenge-accept3d.codekata2020)
+
+(def monthsletters (set "jfmamjjasond"))
+
+(defn letter-data [[a b]]
+  {:letter-a? a
+   :letter-in-m? (get monthsletters a)
+   :letter-b? b
+   :letter-b-in-m? (get monthsletters b)})
+
+(defn data->lets [lod]
+  (let {:keys [letter-a? letter-in-m? letter-b? letter-b-in-m?] lod}
+    (cond
+      (and letter-in-m? letter-b-in-m?))))
+
+(defn months-string-filter [s]
+  (->>  (partition-all 2 1 s)
+        (map letter-data)
+        (map data->lets)
+        ))
+
+
+
+(comment
+  (months-string-filter "cog")
+  (def s1 ((\c \o) (\o \g) (\g)))
+  (def s2 ({:letter-a? \c, :letter-in-m? nil, :letter-b? \o, :letter-b-in-m? \o}
+           {:letter-a? \o, :letter-in-m? \o, :letter-b? \g, :letter-b-in-m? nil}
+           {:letter-a? \g, :letter-in-m? nil, :letter-b? nil, :letter-b-in-m? nil}))
+  )
